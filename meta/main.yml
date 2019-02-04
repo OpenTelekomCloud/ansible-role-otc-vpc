@@ -1,0 +1,28 @@
+galaxy_info:
+  role_name: otc-vpc
+  author: Artem Goncharov
+  company: OpenTelekomCloud
+
+  license: license (Apache)
+
+  min_ansible_version: 2.6
+
+  platforms:
+   - name: EL
+     versions:
+      - all
+   - name: Fedora
+     versions:
+      - all
+   - name: Ubuntu
+     versions:
+      - all
+   - name: Debian
+     versions:
+      - all
+  galaxy_tags:
+    - openstack
+    - otc
+    - router
+
+dependencies: []

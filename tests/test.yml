@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  roles:
+    - { role: otc-vpc, enable_snat: False, subnet_cidr: '192.168.7.0/24'  }
+  tasks:
+    - name: fetch subnet facts
+      os_subnets_facts:
+        name: "{{ subnet_name }}"
+      register: subnet_facts
+
+    - name: verify subnet CIDR
+      assert:
+        that:
+          - subnet_facts.ansible_facts.openstack_subnets[0].cidr == '192.168.7.0/24'
+
+- hosts: localhost
+  roles:
+    - { role: otc-vpc, state: 'absent' }
