@@ -12,12 +12,28 @@ It is required, that openstacksdk is installed on the execution host and connect
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Available variables are listed below, along with default values (see `defaults/main.yml`):
+  # Use prefix for resource naming (when using default naming constructions)
+  prefix: test-
 
-Dependencies
-------------
+  # Define router name to be used:
+  router_name: "{{ (prefix + router_name_suffix) }}"
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+  # Network name:
+  network_name: "{{ (prefix + network_name_suffix) }}"
+
+  # Subnet name:
+  subnet_name: "{{ (prefix + subnet_name_suffix) }}"
+
+  # Default subnet CIDR
+  subnet_cidr: "192.168.110.0/24"
+
+  # Default DNS servers:
+  subnet_dns_servers: "{{ ['100.125.4.25', '8.8.8.8'] }}"
+
+  # State (`present` for creation, `absent` for deletion)
+  state: present
+
 
 Example Playbook
 ----------------
@@ -26,20 +42,20 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: localhost
       roles:
-         - otc-vpc
+         - otc_vpc
 
 Cleanup of the router is as easy, as it's creation. For that a variable 'state': 'false' should be passed:
 
     - hosts: localhost
       roles:
-        - { role: otc-vpc, state: 'absent'}
+        - { role: otc_vpc, state: 'absent'}
 
 License
 -------
 
-BSD
+Apache
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+OpenTelekomCloud

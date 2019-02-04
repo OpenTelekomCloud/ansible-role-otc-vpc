@@ -5,13 +5,13 @@
 prefix: test1-
 
 # Define router name to be used:
-router_name: "{{ (infra_prefix + router_name_suffix) }}"
+router_name: "{{ (prefix + router_name_suffix) }}"
 
 # Network name:
-network_name: "{{ (infra_prefix + network_name_suffix) }}"
+network_name: "{{ (prefix + network_name_suffix) }}"
 
 # Subnet name:
-subnet_name: "{{ (infra_prefix + subnet_name_suffix) }}"
+subnet_name: "{{ (prefix + subnet_name_suffix) }}"
 
 # Default subnet CIDR
 # subnet_cidr: "192.168.110.0/24"

@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   roles:
-    - { role: otc-vpc, enable_snat: False, subnet_cidr: '192.168.7.0/24' }
+    - { role: otc_vpc, enable_snat: False, subnet_cidr: '192.168.7.0/24' }
   tasks:
     - name: fetch subnet facts
       os_subnets_facts:
@@ -15,4 +15,4 @@
 
 - hosts: localhost
   roles:
-    - { role: otc-vpc, state: 'absent' }
+    - { role: otc_vpc, state: 'absent' }

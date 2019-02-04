@@ -10,15 +10,15 @@ task_manager:
 state: present
 
 external_network_name: admin_external_net
-infra_prefix: test- # This should be overridden in inventory
+prefix: test- # This should be overridden in inventory
 
 router_name_suffix: otc-vpc-router
 network_name_suffix: otc-net
 subnet_name_suffix: default-subnet
-network_name: "{{ (infra_prefix + network_name_suffix) }}"
-router_name: "{{ (infra_prefix + router_name_suffix) }}"
+network_name: "{{ (prefix + network_name_suffix) }}"
+router_name: "{{ (prefix + router_name_suffix) }}"
 
-subnet_name: "{{ (infra_prefix + subnet_name_suffix) }}"
+subnet_name: "{{ (prefix + subnet_name_suffix) }}"
 subnet_cidr: "192.168.110.0/24"
 subnet_dns_servers: "{{ ['100.125.4.25', '8.8.8.8'] }}"
 
