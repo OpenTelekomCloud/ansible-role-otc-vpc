@@ -2,6 +2,7 @@ galaxy_info:
   role_name: otc-vpc
   author: Artem Goncharov
   company: OpenTelekomCloud
+  description: Manage a router with net and subnet (VPC in OTC terms)
 
   license: license (Apache)
 
@@ -21,6 +22,8 @@ galaxy_info:
      versions:
       - all
   galaxy_tags:
+    - system
+    - cloud
     - openstack
     - otc
     - router
