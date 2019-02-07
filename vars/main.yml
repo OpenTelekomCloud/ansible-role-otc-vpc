@@ -2,16 +2,16 @@
 # vars file for ansible-role-otc-vpc
 
 # Use prefix for resource naming (when using default naming constructions)
-prefix: test1-
+# prefix: test1-
 
 # Define router name to be used:
-router_name: "{{ (prefix + router_name_suffix) }}"
+# router_name: "{{ (prefix + router_name_suffix) }}"
 
 # Network name:
-network_name: "{{ (prefix + network_name_suffix) }}"
+# network_name: "{{ (prefix + network_name_suffix) }}"
 
 # Subnet name:
-subnet_name: "{{ (prefix + subnet_name_suffix) }}"
+# subnet_name: "{{ (prefix + subnet_name_suffix) }}"
 
 # Default subnet CIDR
 # subnet_cidr: "192.168.110.0/24"
