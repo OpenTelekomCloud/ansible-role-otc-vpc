@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: otc_vpc
+  role_name: vpc
   author: Artem Goncharov
   company: OpenTelekomCloud
   description: Manage a router with net and subnet (VPC in OTC terms)

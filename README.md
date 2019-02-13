@@ -1,4 +1,4 @@
-VPC role for Open Telekom Cloud 
+VPC role for Open Telekom Cloud
 ===============================
 
 An Ansible role to create a VPC for the Open Telekom Cloud with a
@@ -25,6 +25,14 @@ Open Telekom Cloud need to be in place. This role is compatible with
 any Ansible version. If `openstacksdk` has a version before 0.15,
 `enable_snat` will be disabled and there is no possibility to
 re-enable it from Ansible (only CLI or UI).
+
+
+Installation
+------------
+
+Role can be installed from Ansible Galaxy by issuing command:
+
+  ansible-galaxy install opentelekomcloud.vpc
 
 Role Variables
 --------------
@@ -59,13 +67,13 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: localhost
       roles:
-         - otc_vpc
+         - opentelekomcloud.vpc
 
 Cleanup of the VPC is as easy as its creation. For that a variable 'state': 'absent' should be passed:
 
     - hosts: localhost
       roles:
-        - { role: otc_vpc, state: 'absent'}
+        - { role: opentelekomcloud.vpc, state: 'absent'}
 
 License
 -------
@@ -76,4 +84,3 @@ Author Information
 ------------------
 
 Ecosystem Squad at Open Telekom Cloud <TBD@telekom.com>
-
