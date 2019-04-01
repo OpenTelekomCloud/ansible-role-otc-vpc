@@ -32,7 +32,7 @@ Installation
 
 Role can be installed from Ansible Galaxy by issuing command:
 
-  ansible-galaxy install opentelekomcloud.vpc
+    ansible-galaxy install opentelekomcloud.vpc
 
 Role Variables
 --------------
@@ -75,6 +75,19 @@ Cleanup of the VPC is as easy as its creation. For that a variable 'state': 'abs
     - hosts: localhost
       roles:
         - { role: opentelekomcloud.vpc, state: 'absent'}
+
+Extended example showing the usage of different variables:
+
+    - hosts: localhost
+      vars:
+        router_name: 'my_router'
+        network_name: 'my_network'
+        subnet_name: 'my_subnet'
+        subnet_cidr: '192.168.1.0/24'
+        subnet_dns_servers: "['100.125.4.25', '8.8.4.4']"
+        enable_snat: false
+      roles:
+        - { role: opentelekomcloud.vpc, state: 'present' }
 
 License
 -------
