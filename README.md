@@ -32,7 +32,7 @@ Installation
 
 Role can be installed from Ansible Galaxy by issuing command:
 
-  ansible-galaxy install opentelekomcloud.vpc
+    ansible-galaxy install opentelekomcloud.vpc
 
 Role Variables
 --------------
