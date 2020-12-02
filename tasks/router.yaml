@@ -6,7 +6,7 @@
     name: "{{ router_name }}"
     state: "{{ state }}"
     network: "{{ external_network_name }}"
-    enable_snat: "{{ enable_snat }} "
+    enable_snat: "{{ enable_snat | default(omit) }} "
     interfaces:
       - net: "{{ network_name }}"
         subnet: "{{ subnet_name }}"
