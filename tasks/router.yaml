@@ -2,7 +2,7 @@
 # upstream expects enable_snat to be defaulted to true, but in OTC it is not that
 # therefore it is required to enable snat manually later or use heat
 - name: Create Router
-  os_router:
+  openstack.cloud.router:
     name: "{{ router_name }}"
     state: "{{ state }}"
     network: "{{ external_network_name }}"
@@ -20,7 +20,7 @@
   when: state != 'absent'
 
 - name: Delete Router
-  os_router:
+  openstack.cloud.router:
     name: "{{ router_name }}"
     state: "{{ state }}"
   when: state == 'absent'
