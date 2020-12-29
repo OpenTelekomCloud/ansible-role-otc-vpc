@@ -24,4 +24,4 @@ subnet_dns_servers: "{{ ['100.125.4.25', '8.8.8.8'] }}"
 
 # By default SNAT will be disabled on the router. Pass `enable_snat: false`
 # to disable it
-enable_snat: None
+#enable_snat: None
