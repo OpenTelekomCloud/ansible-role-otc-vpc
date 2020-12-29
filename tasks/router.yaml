@@ -17,7 +17,9 @@
   assert:
     that:
       - net_router.router.external_gateway_info.enable_snat == enable_snat
-  when: state != 'absent'
+  when: 
+    - state != 'absent'
+    - enable_snat is defined 
 
 - name: Delete Router
   openstack.cloud.router:
